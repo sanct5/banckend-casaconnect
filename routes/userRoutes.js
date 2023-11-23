@@ -8,6 +8,7 @@ const { validarJWT } = require('../middlewares/validar-token.js');
 
 router.use( express.json() );
 
+router.get('/', listarUsuarios)
 
 router.post('/', loginUsuario)
 
@@ -22,6 +23,6 @@ router.post(
 
 router.get('/renew', validarJWT, revalidarToken)
 
-router.get('/', listarUsuarios)
+
 
 module.exports = router;
