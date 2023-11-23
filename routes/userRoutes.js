@@ -12,13 +12,11 @@ router.use( express.json() );
 router.post('/', loginUsuario)
 
 router.post(
-    '/new',
-    [
+    '/new',[
         check('name', 'El nombre es obligatorio').not().isEmpty(),
         check('email', 'El email es obligatorio').isEmail(),
         check('password', "la clave debe tener al menos 6 digitos").isLength({ min: 6 }),
-        validarCampos
-    ],
+        validarCampos],
     crearUsuario
 )
 
