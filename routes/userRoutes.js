@@ -6,7 +6,10 @@ const { listarUsuarios } = require('../controllers/usersController.js');
 const { validarCampos } = require('../middlewares/validar-campos.js');
 const { validarJWT } = require('../middlewares/validar-token.js');
 
-router.post('/login', loginUsuario)
+router.use( express.json() );
+
+
+router.post('/', loginUsuario)
 
 router.post(
     '/new',

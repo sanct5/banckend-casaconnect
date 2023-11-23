@@ -3,6 +3,7 @@ const router = express.Router();
 const { validarJWT } = require('../middlewares/validar-token');
 const { listProperties, createProperty, updateProperty, deleteProperty, getOneProperty } = require('../controllers/propertyController');
 
+router.use( express.json() );
 router.use(validarJWT);
 
 router.get('/:id', getOneProperty);
